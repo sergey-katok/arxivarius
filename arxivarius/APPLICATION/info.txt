@@ -1,0 +1,23 @@
+
+--------- authentication -----------
+http://wiki.rubyonrails.org/rails/pages/HowtoAuthenticateWithHTTP
+admin : raduga7
+
+rails 1.1.6
+
+"D:\Program Files\ruby\bin\rubyw.exe" E:\arXivarius\script\server
+"D:\Program Files\ruby\bin\ruby.exe" E:\arXivarius\script\server
+
+File/DirWalk.pm
+ppm install MP3-Tag
+DBI
+DBD-mysql
+
+
+--- mysql
+SET NAMES cp1251;
+in my.ini
+set proper path for Index.xml for charsets
+
+--- php
+php 5.2.8

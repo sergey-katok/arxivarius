@@ -1,0 +1,14 @@
+<span class=header>Переименование <%= ( @is_dir ? 'директории' : 'файла') %></span>
+
+<%= start_form_tag({:action => 'rename_process'}) %>
+<input type=hidden name=is_dir value=<%= @is_dir %>>
+<input type=hidden name=id value=<%= @id %>>
+
+Прежнее имя: <%= @old_name %>
+
+<br><br>Новое имя:
+<input type=text name=new_name size=60 value="<%= @obj.title %>">
+
+<br><input type=submit value="Переименовать">
+
+</form>
