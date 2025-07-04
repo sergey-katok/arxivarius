@@ -1,0 +1,19 @@
+
+<b>
+&nbsp;
+
+<br><br><a href="http://localhost/cgi-bin/arXivarius/directory_tree.cgi" target=_blank>Сбор новых директорий/файлов в базу данных</a>
+
+<br><br><%= link_to("Показать не архивированные", :action => 'not_archived') %>
+
+<br><br><a href="http://localhost/arXivarius/re-archive.php" target=_blank>Переархивировать директории</a>
+
+<br><br><%= link_to("Создать новый архив", :action => 'new_archive') %>
+
+<br><br><%= link_to("Найти стёртые и перемещенные с жёсткого диска", :action => 'find_deleted') %>
+
+<br><br><%= link_to("Найти потерянные (no parent_id)", :action => 'find_miss_par') %>
+
+
+<br><br><a href="http://localhost/cgi-bin/arXivarius/backup.cgi" target=_blank>Backup программы и базы данных</a>
+

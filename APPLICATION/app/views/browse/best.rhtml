@@ -1,0 +1,74 @@
+
+
+
+<b>Лучшее</b><br>&nbsp;
+
+<table border=1 cellpadding=10 cellspacing=0 width=100%>
+    <tr>
+        <td valign=top width=30% class=dirs>
+            <table border=0 cellpadding=2 cellspacing=3>
+                <% @dirs.each do |subdir| %>
+                    <% next if subdir.id == 0 %>
+
+                    <tr>
+                        <td>
+                            <%= subdir.icon %>
+                        </td>
+                        <td>
+                            <table cellpadding=0 cellspacing=0 border=0>
+                                <tr>
+                                    <td><div id="dir_<%= subdir.id %>">
+                                    <%= link_to subdir.title, {:action => 'show', :id => subdir.id}, 'class' => ( subdir.is_online ? 'online' : 'offline' )  %>
+                                    </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                <% end %>
+            </table>
+        </td>
+        <td  valign=top class=files>
+            <table border=0 cellpadding=2 cellspacing=2>
+                <%
+                mp3summary_repeat = {}
+                @fils.each do |fil| %>
+                    <tr valign=top>
+                        <% if @mode == 'maintain' %>
+                        <td align=center>
+                            <input type="checkbox" name="fils[]" value="<%= fil.id %>">
+                        </td>
+                        <% end %>
+                        <td>
+                            <%= fil.icon %>
+                        </td>
+                        <td>
+                            <table cellpadding=0 cellspacing=0 border=0>
+                                <tr>
+                                    <td><div id="fil_<%= fil.id %>">
+                                    <% @link =  fil.link.sub(/^http:\/\/localhost/,'http://'+request.env["HTTP_HOST"]) %>
+                                    <% @link.sub!(/\:3000/,'') %>
+                                    <%= @link %>
+                                    </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <% summary_wo_digits = fil.mp3summary.gsub(/\d/, '*') %>
+                            <% mp3summary_repeat[summary_wo_digits] ||= 0 %>
+                            <% mp3summary_repeat[summary_wo_digits] += 1 %>
+                            <% if !(mp3summary_repeat[summary_wo_digits] > 2) %>
+                                <%= fil.mp3summary %>
+                            <% end %>
+                        </td>
+                    </tr>
+                <% end %>
+            </table>
+        </td>
+    </tr>
+</table>
+

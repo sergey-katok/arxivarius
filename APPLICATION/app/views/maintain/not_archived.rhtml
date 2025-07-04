@@ -1,0 +1,35 @@
+
+<span class=header>Предел <%= @limit %></span>
+<br>
+
+
+<br>
+<span class=header>Не архивированные директории</span>
+<table cellpadding=5 cellspacing=0 border=1>
+    <tr class=dirs>
+        <td align=center>Директория</td>
+    </tr>
+<% @drs.each do |dr| %>
+    <tr>
+        <td>
+            <%= link_to(dr.path, {:controller => 'browse', :action => 'show', :id => dr.id}) %>
+        </td>
+    </tr>
+<% end %>
+</table>
+
+
+
+<span class=header>Не архивированные файлы</span>
+<table cellpadding=5 cellspacing=0 border=1>
+    <tr class=dirs>
+        <td align=center>Файл</td>
+    </tr>
+<% @fils.each do |fil| %>
+    <tr>
+        <td>
+            <%= fil.path %>
+        </td>
+    </tr>
+<% end %>
+</table>

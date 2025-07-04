@@ -1,0 +1,27 @@
+<% if @process == 'Off-line' %>
+<span class=header>Стирание с жёсткого диска</span>
+<% elsif @process == 'В лучшее' %>
+<span class=header>Награждение в личшие</span>
+<% else %>
+<span class=header>Помещение в архив #<%= @archive_id %></span>
+<% end %>
+
+
+<br><br>
+<span class=header>Директории</span>
+<% @drs.each do |dr| %>
+        <br><%= dr.path %>
+        <% if @process != 'В лучшее' %>
+        <ul><%= @sbs[dr] %></ul>
+        <% end %>
+<% end %>
+
+<br><br>
+<span class=header>Файлы</span>
+<% @fls.each do |fl| %>
+        <br><%= fl.path %>
+<% end %>
+
+<hr>
+Готово.
+
