@@ -1,0 +1,43 @@
+
+.dirs {
+	background-color:#EFEFEF;
+	font-family:Century Gothic,Verdana,Arial,Courier New,Times New Roman;
+	font-size:14px;
+}
+
+.files {
+	background-color:#FFFFFF;
+	font-family:Century,Verdana,Arial,Courier New,Times New Roman;
+	font-size:12px;
+}
+
+body {
+	font-family:Times New Roman;
+	font-size:15px;
+}
+
+td {
+	font-family:Century,Verdana,Arial,Courier New,Times New Roman;
+	font-size:12px;
+	color:#777777;
+}
+
+A {
+	COLOR: #158A9C;
+	TEXT-DECORATION: none;
+}
+
+A:Hover {
+	COLOR: #FF0000;
+	TEXT-DECORATION: none;
+}
+
+.offline {
+	COLOR: #555555;
+	TEXT-DECORATION: none;
+}
+
+.header {
+	font-family:Century Gothic,Century,Verdana,Arial,Courier New,Times New Roman;
+	font-size:15px;
+}
